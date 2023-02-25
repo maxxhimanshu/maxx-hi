@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import HeroPage from './components/HomePage/HeroPage';
+import Sec from './components/HomePage/Sec';
+import Third from './components/HomePage/Third';
+import Fourth from './components/HomePage/Fourth';
+import Fifth from './components/HomePage/Fifth';
+import Drop from './components/recruiterForm.js';
+import UserProfile from './components/UserProfile.js';
+import RegisterForm from "./components/loginPage/Register.js"
+import Login from "./components/loginPage/login.js"
+import JobForm from './components/form.js'
+import { Routes, Link, Route } from 'react-router-dom'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    return (
+        <div>
+            <Routes>
+                <Route path="/" element={<>
+                    <HeroPage />
+                    <Sec />
+                    <Third />
+                    <Fourth />
+                    <Fifth />
+                </>} />
+                <Route path ="login" element={<Login />}/>
+            </Routes>
 
+
+            {/* <Drop />
+            <RegisterForm />
+      
+            <JobForm />
+            <UserProfile /> */}
+        </div>
+    )
+}
 export default App;
