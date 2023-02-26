@@ -11,20 +11,13 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    title: {
-      type: String,
-      required: true,
-      enum: ["Mr", "Mrs", "Miss"],
-    },
+    
     email: {
       type: String,
       required: true,
       unique: true,
     },
-    city: {
-      type: String,
-      required: true,
-    },
+    
     recruter: {
       type: Boolean,
       required: true,

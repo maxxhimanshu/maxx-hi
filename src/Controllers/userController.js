@@ -17,7 +17,7 @@ if(user) return res.status(201).send({status:true,message:"User created successf
 else return res.status(400).send({status:false,message:"User creation failed"})
 
 }catch(err){
-    res.status(500).send({status:false,message:err.message})
+    res.status(500).send({status:false,message:"error occoured",error:err.message})
 }
 
 };
