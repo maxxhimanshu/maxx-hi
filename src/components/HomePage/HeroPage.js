@@ -1,9 +1,22 @@
 import React from 'react';
 import '../../styles/App.css';
+import { useEffect } from 'react';
+
+function App(){
+const [user, setUser] = React.useState("");
+
+useEffect(() => {
+  setUser(  JSON.parse(localStorage.getItem("userDetails")))
+ 
+}, [])
+
+function logOut(){
+  localStorage.removeItem('userDetails');
+  localStorage.removeItem('token');
+  window.location.reload();
+}
 
 
-function App()
-{
   return(
     <div className="hero">
       <div className="nav">
@@ -16,7 +29,10 @@ function App()
             <li><a href="#recruiter">Recruiter</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#contact">Contact Us </a></li>
-            <li><a href="/login">Login</a></li>
+            {
+              user?<li style={{background: "red",cursor:'pointer'}} onClick={logOut}>Log Out</li>: <li><a href="/login">Login</a></li>
+            }
+           
           </ul>
         </div>
       </div>

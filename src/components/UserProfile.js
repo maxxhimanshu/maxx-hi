@@ -7,9 +7,9 @@ import { useState } from 'react';
  function UserProfile() { 
     
 
-    function GetData (){
-        fetch("http://localhost:8000//personal/:id",)
-    }
+    // function GetData (){
+    //     fetch("http://localhost:8000//personal/:id",)
+    // }
       return (
     <div className="hero">
         <div className="nav">
